@@ -227,8 +227,9 @@ def _multi(key: str, label: str, options: list[str], placeholder: str, *,
 def render_sidebar(ds: Datasets, page: str) -> Filters:
     """Filtres cohérents avec la page active : jamais de filtre décoratif.
 
-    Organisés par catégorie (territoire / finance / temporel), avec sections
-    repliables pour les blocs secondaires — cf. exigence « filtres avancés ».
+    Organisés par catégorie (territoire / finance / temporel). Tous les filtres,
+    y compris les sous-filtres (commune, canton, type d'établissement, opérateur),
+    sont affichés directement, sans section repliable.
     """
     with st.sidebar:
         with st.container(key="sb_head"):
@@ -261,14 +262,13 @@ def render_sidebar(ds: Datasets, page: str) -> Filters:
             by_pref = ds.communes_by_prefecture()
             scoped_com = sorted({c for p in chosen["prefecture"] for c in by_pref.get(p, ())}) \
                 if chosen["prefecture"] else ds.communes(regions=chosen["region"])
-            with st.expander("Commune / canton", expanded=bool(chosen["prefecture"])):
-                chosen["commune"] = _multi(F_COMMUNE, "Commune", scoped_com, C.ALL_LABELS["commune"],
-                                           icon="location_city", disabled=not scoped_com)
-                by_commune = ds.cantons_by_commune()
-                scoped_canton = sorted({ct for c in chosen["commune"] for ct in by_commune.get(c, ())}) \
-                    if chosen["commune"] else ds.cantons()
-                chosen["canton"] = _multi(F_CANTON, "Canton", scoped_canton, C.ALL_LABELS["canton"],
-                                          icon="pin_drop", disabled=not scoped_canton)
+            chosen["commune"] = _multi(F_COMMUNE, "Commune", scoped_com, C.ALL_LABELS["commune"],
+                                       icon="location_city", disabled=not scoped_com)
+            by_commune = ds.cantons_by_commune()
+            scoped_canton = sorted({ct for c in chosen["commune"] for ct in by_commune.get(c, ())}) \
+                if chosen["commune"] else ds.cantons()
+            chosen["canton"] = _multi(F_CANTON, "Canton", scoped_canton, C.ALL_LABELS["canton"],
+                                      icon="pin_drop", disabled=not scoped_canton)
 
             if chosen["region"]:
                 st.caption("2 régions sélectionnées : comparaison activée."
@@ -277,22 +277,20 @@ def render_sidebar(ds: Datasets, page: str) -> Filters:
 
         if page in finance_pages:
             st.markdown('<div class="sb-section">Finance</div>', unsafe_allow_html=True)
-            # Deux sous-menus indépendants. Chaque page ne propose que celui qui a un sens pour
-            # elle : le type d'établissement n'agit pas sur la page Mobile Money (agents), et
-            # l'opérateur Mobile Money n'agit pas sur la page Services financiers
-            # (établissements formels). La Vue d'ensemble garde les deux.
+            # Deux filtres indépendants, affichés directement (aucun sous-menu repliable). Chaque
+            # page ne propose que celui qui a un sens pour elle : le type d'établissement n'agit
+            # pas sur la page Mobile Money (agents), et l'opérateur Mobile Money n'agit pas sur
+            # la page Services financiers (établissements formels). La Vue d'ensemble garde les deux.
             if page in {"vue_ensemble", "services_financiers"}:
-                with st.expander("Type d'établissement", expanded=False):
-                    categories = ds.etab_categories
-                    chosen["etab_categorie"] = _multi(F_ETAB, "Type d'établissement", categories,
-                                                      C.ALL_LABELS["etab_categorie"], icon="category",
-                                                      disabled=not categories)
+                categories = ds.etab_categories
+                chosen["etab_categorie"] = _multi(F_ETAB, "Type d'établissement", categories,
+                                                  C.ALL_LABELS["etab_categorie"], icon="category",
+                                                  disabled=not categories)
             if page in {"vue_ensemble", "mobile_money"}:
-                with st.expander("Opérateur Mobile Money", expanded=False):
-                    operateurs = ds.mm_operateurs
-                    chosen["mm_operateur"] = _multi(F_MM, "Opérateur Mobile Money", operateurs,
-                                                    C.ALL_LABELS["mm_operateur"], icon="sim_card",
-                                                    disabled=not operateurs)
+                operateurs = ds.mm_operateurs
+                chosen["mm_operateur"] = _multi(F_MM, "Opérateur Mobile Money", operateurs,
+                                                C.ALL_LABELS["mm_operateur"], icon="sim_card",
+                                                disabled=not operateurs)
 
         # Le filtre « Palier de priorité » n'existe plus que sur la page Recommandations :
         # la page Inclusion territoriale présente déjà tous les paliers (carte, légende).
