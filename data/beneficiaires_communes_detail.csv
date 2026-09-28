@@ -1,0 +1,117 @@
+﻿cle_commune,lbl,palier,population,adultes,n_formel,besoin_points_ref,part_benef_addit,benef_addit_est,type_action_toutes_paliers
+TONE 1,Tone 1,P3,211743,109048,15,4,0.2105,22957,C. Densification du réseau formel existant
+TONE 2,Tone 2,P2,50179,25842,0,5,1.0,25842,A. Extension depuis le pôle voisin
+TONE 3,Tone 3,P2,60276,31042,1,5,0.8333,25868,C. Densification du réseau formel existant
+TONE 4,Tone 4,P1,66577,34287,0,6,1.0,34287,A. Extension depuis le pôle voisin
+CINKASSE 1,Cinkasse 1,P4,75992,39136,16,0,0.0,0,C. Densification du réseau formel existant
+CINKASSE 2,Cinkasse 2,P3,52967,27278,2,3,0.6,16367,C. Densification du réseau formel existant
+KPENDJAL OUEST 1,Kpendjal-Ouest 1,P3,56459,29076,1,5,0.8333,24230,C. Densification du réseau formel existant
+KPENDJAL OUEST 2,Kpendjal-Ouest 2,P2,66871,34439,2,4,0.6667,22959,C. Densification du réseau formel existant
+KPENDJAL 1,Kpendjal 1,P2,47903,24670,0,5,1.0,24670,B. Nouveau point relais (isolement > 15 km)
+KPENDJAL 2,Kpendjal 2,P2,40462,20838,0,4,1.0,20838,B. Nouveau point relais (isolement > 15 km)
+OTI SUD 1,Oti-Sud 1,P3,106052,54617,4,6,0.6,32770,C. Densification du réseau formel existant
+OTI SUD 2,Oti-Sud 2,P3,44324,22827,1,3,0.75,17120,C. Densification du réseau formel existant
+OTI 1,Oti 1,P4,54479,28057,7,0,0.0,0,C. Densification du réseau formel existant
+OTI 2,Oti 2,P3,70369,36240,4,3,0.4286,15531,C. Densification du réseau formel existant
+TANDJOARE 1,Tandjoare 1,P3,74692,38466,4,3,0.4286,16485,C. Densification du réseau formel existant
+TANDJOARE 2,Tandjoare 2,P3,64175,33050,4,2,0.3333,11017,C. Densification du réseau formel existant
+KOZAH 1,Kozah 1,P4,193625,99717,26,0,0.0,0,C. Densification du réseau formel existant
+KOZAH 2,Kozah 2,P4,45704,23538,4,1,0.2,4708,C. Densification du réseau formel existant
+KOZAH 3,Kozah 3,P2,23755,12234,0,3,1.0,12234,A. Extension depuis le pôle voisin
+KOZAH 4,Kozah 4,P1,20654,10637,0,2,1.0,10637,A. Extension depuis le pôle voisin
+ASSOLI 1,Assoli 1,P4,40417,20815,7,0,0.0,0,C. Densification du réseau formel existant
+ASSOLI 2,Assoli 2,P1,9933,5115,0,1,1.0,5115,A. Extension depuis le pôle voisin
+ASSOLI 3,Assoli 3,P1,16044,8263,0,2,1.0,8263,A. Extension depuis le pôle voisin
+BASSAR 1,Bassar 1,P4,65059,33505,9,0,0.0,0,C. Densification du réseau formel existant
+BASSAR 2,Bassar 2,P4,36476,18785,2,2,0.5,9392,C. Densification du réseau formel existant
+BASSAR 3,Bassar 3,P4,33873,17445,3,1,0.25,4361,C. Densification du réseau formel existant
+BASSAR 4,Bassar 4,P1,16657,8578,0,2,1.0,8578,A. Extension depuis le pôle voisin
+DANKPEN 1,Dankpen 1,P4,76294,39291,7,0,0.0,0,C. Densification du réseau formel existant
+DANKPEN 2,Dankpen 2,P2,32716,16849,0,3,1.0,16849,A. Extension depuis le pôle voisin
+DANKPEN 3,Dankpen 3,P2,76652,39476,0,7,1.0,39476,A. Extension depuis le pôle voisin
+KERAN 1,Keran 1,P4,44399,22865,7,0,0.0,0,C. Densification du réseau formel existant
+KERAN 2,Keran 2,P2,53305,27452,0,5,1.0,27452,B. Nouveau point relais (isolement > 15 km)
+KERAN 3,Keran 3,P2,30983,15956,0,3,1.0,15956,B. Nouveau point relais (isolement > 15 km)
+DOUFELGOU 1,Doufelgou 1,P4,44783,23063,6,0,0.0,0,C. Densification du réseau formel existant
+DOUFELGOU 2,Doufelgou 2,P4,11722,6037,1,1,0.5,3018,C. Densification du réseau formel existant
+DOUFELGOU 3,Doufelgou 3,P4,28262,14555,3,0,0.0,0,C. Densification du réseau formel existant
+BINAH 1,Binah 1,P3,44039,22680,2,2,0.5,11340,C. Densification du réseau formel existant
+BINAH 2,Binah 2,P4,40160,20682,7,0,0.0,0,C. Densification du réseau formel existant
+TCHAOUDJO 1,Tchaoudjo 1,P4,177706,91519,20,0,0.0,0,C. Densification du réseau formel existant
+TCHAOUDJO 2,Tchaoudjo 2,P1,24891,12819,0,3,1.0,12819,B. Nouveau point relais (isolement > 15 km)
+TCHAOUDJO 3,Tchaoudjo 3,P1,17484,9004,0,2,1.0,9004,B. Nouveau point relais (isolement > 15 km)
+TCHAOUDJO 4,Tchaoudjo 4,P2,20279,10444,0,2,1.0,10444,A. Extension depuis le pôle voisin
+TCHAMBA 1,Tchamba 1,P4,82451,42462,6,2,0.25,10616,C. Densification du réseau formel existant
+TCHAMBA 2,Tchamba 2,P2,64930,33439,1,5,0.8333,27866,C. Densification du réseau formel existant
+TCHAMBA 3,Tchamba 3,P4,53204,27400,5,0,0.0,0,C. Densification du réseau formel existant
+BLITTA 1,Blitta 1,P4,71539,36843,8,0,0.0,0,C. Densification du réseau formel existant
+BLITTA 2,Blitta 2,P3,46515,23955,2,3,0.6,14373,C. Densification du réseau formel existant
+BLITTA 3,Blitta 3,P2,45218,23287,0,5,1.0,23287,B. Nouveau point relais (isolement > 15 km)
+SOTOUBOUA 1,Sotouboua 1,P4,46907,24157,11,0,0.0,0,C. Densification du réseau formel existant
+SOTOUBOUA 2,Sotouboua 2,P3,64187,33056,4,2,0.3333,11019,C. Densification du réseau formel existant
+SOTOUBOUA 3,Sotouboua 3,P4,27770,14302,3,0,0.0,0,C. Densification du réseau formel existant
+MO 1,Mo 1,P4,30522,15719,1,2,0.6667,10479,C. Densification du réseau formel existant
+MO 2,Mo 2,P4,21926,11292,1,1,0.5,5646,C. Densification du réseau formel existant
+OGOU 1,Ogou 1,P4,116301,59895,17,0,0.0,0,C. Densification du réseau formel existant
+OGOU 2,Ogou 2,P3,56282,28985,2,4,0.6667,19323,C. Densification du réseau formel existant
+OGOU 3,Ogou 3,P4,51836,26696,3,2,0.4,10678,C. Densification du réseau formel existant
+OGOU 4,Ogou 4,P4,29048,14960,2,1,0.3333,4987,C. Densification du réseau formel existant
+MOYEN MONO 1,Moyen-Mono 1,P4,46797,24100,3,2,0.4,9640,C. Densification du réseau formel existant
+MOYEN MONO 2,Moyen-Mono 2,P4,43708,22510,3,1,0.25,5628,C. Densification du réseau formel existant
+HAHO 1,Haho 1,P4,119929,61763,16,0,0.0,0,C. Densification du réseau formel existant
+HAHO 2,Haho 2,P2,82507,42491,2,6,0.75,31868,C. Densification du réseau formel existant
+HAHO 3,Haho 3,P1,58695,30228,0,6,1.0,30228,A. Extension depuis le pôle voisin
+HAHO 4,Haho 4,P4,43965,22642,4,0,0.0,0,C. Densification du réseau formel existant
+AGOU 1,Agou 1,P4,58328,30039,6,0,0.0,0,C. Densification du réseau formel existant
+AGOU 2,Agou 2,P1,27465,14144,0,3,1.0,14144,A. Extension depuis le pôle voisin
+KLOTO 1,Kloto 1,P3,118387,60969,10,1,0.0909,5543,C. Densification du réseau formel existant
+KLOTO 2,Kloto 2,P4,16166,8325,1,1,0.5,4162,C. Densification du réseau formel existant
+KLOTO 3,Kloto 3,P4,11433,5888,2,0,0.0,0,C. Densification du réseau formel existant
+KPELE 1,Kpele 1,P4,53275,27437,5,0,0.0,0,C. Densification du réseau formel existant
+KPELE 2,Kpele 2,P4,27664,14247,3,0,0.0,0,C. Densification du réseau formel existant
+DANYI 1+DANYI 2,Danyi 1+Danyi 2,P4,40240,20724,3,1,0.25,5181,C. Densification du réseau formel existant
+WAWA 1,Wawa 1,P3,51187,26361,4,1,0.2,5272,C. Densification du réseau formel existant
+WAWA 2,Wawa 2,P2,20414,10513,0,2,1.0,10513,A. Extension depuis le pôle voisin
+WAWA 3,Wawa 3,P1,29699,15295,0,3,1.0,15295,A. Extension depuis le pôle voisin
+AKEBOU 1,Akebou 1,P4,44196,22761,2,2,0.5,11380,C. Densification du réseau formel existant
+AKEBOU 2,Akebou 2,P2,29634,15262,0,3,1.0,15262,B. Nouveau point relais (isolement > 15 km)
+AMOU 1,Amou 1,P4,19746,10169,1,1,0.5,5084,C. Densification du réseau formel existant
+AMOU 2,Amou 2,P4,40016,20608,4,0,0.0,0,C. Densification du réseau formel existant
+AMOU 3,Amou 3,P3,54410,28021,1,4,0.8,22417,C. Densification du réseau formel existant
+ANIE 1,Anie 1,P4,100745,51884,9,1,0.1,5188,C. Densification du réseau formel existant
+ANIE 2,Anie 2,P2,79413,40898,1,7,0.875,35786,C. Densification du réseau formel existant
+EST MONO 1,Est-Mono 1,P3,34652,17846,1,3,0.75,13384,C. Densification du réseau formel existant
+EST MONO 2,Est-Mono 2,P2,101866,52461,1,9,0.9,47215,C. Densification du réseau formel existant
+EST MONO 3,Est-Mono 3,P4,27942,14390,1,2,0.6667,9593,C. Densification du réseau formel existant
+ZIO 1,Zio 1,P3,307292,158255,23,5,0.1786,28260,C. Densification du réseau formel existant
+ZIO 2,Zio 2,P3,96193,49539,5,4,0.4444,22017,C. Densification du réseau formel existant
+ZIO 3,Zio 3,P3,67843,34939,5,2,0.2857,9983,C. Densification du réseau formel existant
+ZIO 4,Zio 4,P4,28704,14783,3,0,0.0,0,C. Densification du réseau formel existant
+YOTO 1,Yoto 1,P4,77353,39837,10,0,0.0,0,C. Densification du réseau formel existant
+YOTO 2,Yoto 2,P4,43412,22357,6,0,0.0,0,C. Densification du réseau formel existant
+YOTO 3,Yoto 3,P3,54086,27854,3,2,0.4,11142,C. Densification du réseau formel existant
+BAS MONO 1,Bas-Mono 1,P3,55382,28522,3,2,0.4,11409,C. Densification du réseau formel existant
+BAS MONO 2,Bas-Mono 2,P3,39478,20331,1,3,0.75,15248,C. Densification du réseau formel existant
+LACS 1,Lacs 1,P4,52994,27292,10,0,0.0,0,C. Densification du réseau formel existant
+LACS 2,Lacs 2,P4,42855,22070,2,2,0.5,11035,C. Densification du réseau formel existant
+LACS 3,Lacs 3,P3,108176,55711,6,4,0.4,22284,C. Densification du réseau formel existant
+LACS 4,Lacs 4,P4,37222,19169,3,1,0.25,4792,C. Densification du réseau formel existant
+VO 1,Vo 1,P4,88865,45765,8,0,0.0,0,C. Densification du réseau formel existant
+VO 2,Vo 2,P4,24396,12564,1,2,0.6667,8376,C. Densification du réseau formel existant
+VO 3,Vo 3,P3,64651,33295,2,4,0.6667,22197,C. Densification du réseau formel existant
+VO 4,Vo 4,P4,46499,23947,6,0,0.0,0,C. Densification du réseau formel existant
+AVE 1,Ave 1,P4,75044,38648,10,0,0.0,0,C. Densification du réseau formel existant
+AVE 2,Ave 2,P4,36170,18628,4,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 1,Golfe 1,P4,351550,181048,57,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 2,Golfe 2,P3,136153,70119,9,4,0.3077,21575,C. Densification du réseau formel existant
+GOLFE 3,Golfe 3,P4,52769,27176,35,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 4,Golfe 4,P4,155842,80259,34,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 5,Golfe 5,P4,169993,87546,60,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 6,Golfe 6,P4,181561,93504,23,0,0.0,0,C. Densification du réseau formel existant
+GOLFE 7,Golfe 7,P3,257813,132774,14,10,0.4167,55322,C. Densification du réseau formel existant
+AGOE NYIVE 1,Agoe-Nyive 1,P4,317255,163386,36,0,0.0,0,C. Densification du réseau formel existant
+AGOE NYIVE 2,Agoe-Nyive 2,P3,128164,66004,6,6,0.5,33002,C. Densification du réseau formel existant
+AGOE NYIVE 3,Agoe-Nyive 3,P4,47554,24490,8,0,0.0,0,C. Densification du réseau formel existant
+AGOE NYIVE 4,Agoe-Nyive 4,P2,154431,79532,4,10,0.7143,56809,C. Densification du réseau formel existant
+AGOE NYIVE 5,Agoe-Nyive 5,P3,125097,64425,5,7,0.5833,37581,C. Densification du réseau formel existant
+AGOE NYIVE 6,Agoe-Nyive 6,P3,110194,56750,8,2,0.2,11350,C. Densification du réseau formel existant

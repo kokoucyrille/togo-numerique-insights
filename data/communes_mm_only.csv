@@ -1,0 +1,23 @@
+﻿commune,préfecture,région,population,agents MM,agents MM / 10 000 hab.,distance médiane au point formel (km),% agents > 10 km,maillage MM ténu (< ½ moyenne nationale)
+Dankpen 3,Dankpen,Kara,76652,37,4.83,12.7,89.19,True
+Tone 4,Tone,Savanes,66577,175,26.29,12.02,76.57,False
+Haho 3,Haho,Plateaux,58695,105,17.89,9.15,46.67,False
+Keran 2,Keran,Kara,53305,38,7.13,18.97,100.0,True
+Tone 2,Tone,Savanes,50179,76,15.15,9.03,40.79,False
+Kpendjal 1,Kpendjal,Savanes,47903,36,7.52,37.73,100.0,True
+Blitta 3,Blitta,Centrale,45218,6,1.33,17.51,100.0,True
+Kpendjal 2,Kpendjal,Savanes,40462,5,1.24,27.19,100.0,True
+Dankpen 2,Dankpen,Kara,32716,31,9.48,14.3,93.55,True
+Keran 3,Keran,Kara,30983,10,3.23,19.96,100.0,True
+Wawa 3,Wawa,Plateaux,29699,56,18.86,7.66,35.71,False
+Akebou 2,Akebou,Plateaux,29634,24,8.1,30.67,100.0,True
+Agou 2,Agou,Plateaux,27465,50,18.2,11.95,74.0,False
+Tchaoudjo 2,Tchaoudjo,Centrale,24891,45,18.08,15.87,95.56,False
+Kozah 3,Kozah,Kara,23755,34,14.31,9.34,38.24,False
+Kozah 4,Kozah,Kara,20654,35,16.95,11.49,54.29,False
+Wawa 2,Wawa,Plateaux,20414,16,7.84,12.35,93.75,True
+Tchaoudjo 4,Tchaoudjo,Centrale,20279,33,16.27,13.92,93.94,False
+Tchaoudjo 3,Tchaoudjo,Centrale,17484,65,37.18,16.71,86.15,False
+Bassar 4,Bassar,Kara,16657,29,17.41,10.32,62.07,False
+Assoli 3,Assoli,Kara,16044,28,17.45,11.56,67.86,False
+Assoli 2,Assoli,Kara,9933,31,31.21,6.4,19.35,False

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Logo Togo Digital Intelligence">
+<circle cx="24" cy="24" r="20" fill="#FFFFFF" stroke="#0B6B4F" stroke-width="5"/>
+<path d="M24 4 A20 20 0 0 1 44 24" fill="none" stroke="#FFCE00" stroke-width="5"/>
+<path d="M24 44 A20 20 0 0 1 4 24" fill="none" stroke="#FFCE00" stroke-width="5"/>
+<g stroke="#0B6B4F" stroke-width="1.6" fill="none" stroke-linecap="round">
+<line x1="24" y1="24" x2="24" y2="13"/><line x1="24" y1="24" x2="33.5" y2="29.5"/><line x1="24" y1="24" x2="14.5" y2="29.5"/>
+</g>
+<circle cx="24" cy="13" r="2.6" fill="#0B6B4F"/><circle cx="33.5" cy="29.5" r="2.6" fill="#0B6B4F"/><circle cx="14.5" cy="29.5" r="2.6" fill="#0B6B4F"/>
+<circle cx="24" cy="24" r="4.2" fill="#FFCE00" stroke="#0B6B4F" stroke-width="1.6"/>
+</svg>

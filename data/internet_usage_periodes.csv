@@ -1,0 +1,9 @@
+﻿rôle,période,début (%),fin (%),gain (pp),rythme (pp/an),croissance annuelle moyenne (%)
+régime 1 (k=1),2000–2015,0.8,7.12,6.32,0.421,15.689
+régime 2 (k=1),2015–2024,7.12,39.483,32.363,3.596,20.965
+"sous-période (k=2, indicatif)",2015–2022,7.12,35.607,28.487,4.07,25.854
+"sous-période (k=2, indicatif)",2022–2024,35.607,39.483,3.876,1.938,5.302
+fenêtre de comparaison,2014–2019,5.7,20.727,15.027,3.005,29.459
+fenêtre de comparaison,2019–2024,20.727,39.483,18.756,3.751,13.756
+fenêtre de comparaison,2020–2024,29.024,39.483,10.459,2.615,7.998
+série complète,2000–2024,0.8,39.483,38.683,1.612,17.64

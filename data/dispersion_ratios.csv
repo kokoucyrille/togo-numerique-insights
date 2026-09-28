@@ -1,0 +1,7 @@
+﻿niveau,réseau,unités,P90 / P10,coefficient de variation,max / min
+région,établissements formels (hab./établissement),6,1.787,0.294,2.561
+région,agents Mobile Money (hab./agent),6,1.609,0.221,1.634
+préfecture,établissements formels (hab./établissement),38,3.317,0.61,9.741
+préfecture,agents Mobile Money (hab./agent),39,3.953,0.669,12.652
+commune,établissements formels (hab./établissement),94,6.225,0.897,67.564
+commune,agents Mobile Money (hab./agent),116,5.248,1.304,57.742

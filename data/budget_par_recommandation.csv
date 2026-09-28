@@ -1,0 +1,5 @@
+﻿recommandation,type_action,description,quantite,communes,population,benef_addit,statut,budget_bas_fcfa,budget_central_fcfa,budget_haut_fcfa,cout_par_beneficiaire_central_fcfa
+R-F1,A,Extension depuis le pôle voisin (communes MM-only ≤ 15 km),47,14,469719,241905,Justifiée par les données,253800000,446500000,728500000,1846.0
+R-F3,C,Densification du réseau formel existant (communes P1/P2 à établissement insuffisant),46,7,610294,248371,Justifiée par les données,138000000,239200000,391000000,963.0
+R-F6,C (renfort),Renfort des pôles fragiles (≤ 2 établissements) desservant des communes MM-only,5,5,277655,142992,Justifiée par les données,15000000,26000000,42500000,182.0
+R-F2,B,Nouveau point relais isolé (> 15 km) — SOUS CONDITION d'une étude de viabilité (non additionné au budget ferme),30,8,289880,149288,Ciblage justifié ; viabilité à étudier,420000000,675000000,990000000,4521.0
