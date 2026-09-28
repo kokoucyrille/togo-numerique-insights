@@ -59,7 +59,7 @@ def render(ds: Datasets, f: Filters) -> None:
             else:
                 pivot = M.dispersion_bar(ds)
                 colors = {"Établissements formels": C.COLORS["part"], "Agents Mobile Money": C.COLORS["yellow"]}
-                hover_extra = _dispersion_hover(table, pivot, M.dispersion_extremes(ds))
+                hover_extra = _dispersion_hover(table, pivot)
                 plot(ch.grouped_hbars(pivot, colors, height=200, value_format=lambda v: f"{fmt_dec(v, 2)}×",
                                       hover_extra=hover_extra, hover_suffix="×", hover_decimals=2),
                      "it_dispersion")
@@ -91,9 +91,7 @@ def render(ds: Datasets, f: Filters) -> None:
                             "location_off")])
             with g2:
                 if not bar.empty:
-                    totals = cantons_df.groupby("region_a").size()
-                    extra = [f"{int(v)} cantons MM-only sur {int(totals.get(l, 0))} cantons de la région "
-                            f"({fmt_pct(v / totals.get(l, 1) * 100, 0)})" for l, v in zip(bar["label"], bar["valeur"])]
+                    extra = _canton_hover(cantons_df, bar)
                     plot(ch.vertical_bars(bar, height=190, percent=False,
                                           colors=[ch.region_color(l) for l in bar["label"]],
                                           hover_extra=extra), "it_canton_region")
@@ -188,17 +186,17 @@ def _niveau_hover(table: pd.DataFrame, ranges: pd.DataFrame) -> tuple[list[str],
     return heads, lines
 
 
-def _dispersion_hover(table: pd.DataFrame, pivot: pd.DataFrame, extremes: dict) -> dict[str, list[str]]:
-    """Info-bulle détaillée par échelle et par réseau : nombre de territoires comparés, écart entre
-    les mieux et les moins bien desservis (lecture en clair), territoires extrêmes et médiane,
-    rapport max / min et coefficient de variation."""
+def _dispersion_hover(table: pd.DataFrame, pivot: pd.DataFrame) -> dict[str, list[str]]:
+    """Info-bulle volontairement réduite à l'essentiel : la lecture en clair de l'écart (P90 / P10,
+    valeur du graphique) et le nombre de territoires comparés. Les extrêmes, la médiane, le
+    rapport max / min et le coefficient de variation ne sont plus affichés."""
     rename_reseau = {
         "établissements formels (hab./établissement)": "Établissements formels",
         "agents Mobile Money (hab./agent)": "Agents Mobile Money",
     }
     hover: dict[str, list[str]] = {}
     for orig, disp in rename_reseau.items():
-        label_reseau, unit = _RESEAU_UNITE[orig]
+        _, unit = _RESEAU_UNITE[orig]
         lines = []
         for niveau in pivot.index:
             row = table[(table["niveau"] == niveau) & (table["réseau"] == orig)]
@@ -207,27 +205,39 @@ def _dispersion_hover(table: pd.DataFrame, pivot: pd.DataFrame, extremes: dict) 
                 continue
             r = row.iloc[0]
             plural = _NIVEAU_PLURAL.get(niveau, niveau)
-            parts = [
+            lines.append("<br>".join([
                 f"Lecture : les 10 % de {plural} les moins bien desservies comptent au moins "
                 f"<b>{fmt_dec(r['P90 / P10'], 1)} fois</b> plus d'{unit.replace('hab./', 'habitants par ')} "
                 f"que les 10 % les mieux desservies",
                 f"Territoires comparés : <b>{fmt_int(r['unités'])}</b> {plural}",
-            ]
-            ext = extremes.get((niveau, orig))
-            if ext:
-                parts += [
-                    f"Mieux desservi : {ext['min_name'].title()} ({fmt_int(ext['min'])} {unit})",
-                    f"Médiane : {fmt_int(ext['med'])} {unit}",
-                    f"Moins bien desservi : {ext['max_name'].title()} ({fmt_int(ext['max'])} {unit})",
-                ]
-            parts += [
-                f"Rapport max / min : <b>×{fmt_dec(r['max / min'], 1)}</b>",
-                f"Coefficient de variation : <b>{fmt_dec(r['coefficient de variation'], 2)}</b> "
-                "(plus il est élevé, plus les écarts sont marqués)",
-            ]
-            lines.append("<br>".join(parts))
+            ]))
         hover[disp] = lines
     return hover
+
+
+def _canton_hover(cantons_df: pd.DataFrame, bar: pd.DataFrame) -> list[str]:
+    """Info-bulle par région du graphique « Cantons MM-only » : poids des cantons MM-only dans la
+    région, part dans l'ensemble des cantons MM-only du périmètre, communes concernées et poids des
+    agents Mobile Money dans ces cantons (comptages uniquement : aucune population à cet échelon)."""
+    total_mm_only = int(cantons_df["mm_only"].sum()) or 1
+    lines = []
+    for label in bar["label"]:
+        reg = cantons_df[cantons_df["region_a"] == label]
+        only = reg[reg["mm_only"]]
+        n_total, n_only = len(reg), len(only)
+        agents_reg, agents_only = float(reg["n_mm"].sum()), float(only["n_mm"].sum())
+        lines.append("<br>".join([
+            f"Cantons MM-only : <b>{fmt_int(n_only)}</b> sur {fmt_int(n_total)} "
+            f"({fmt_pct(n_only / n_total * 100 if n_total else 0, 0)} des cantons de la région)",
+            f"Part de l'ensemble des cantons MM-only : <b>{fmt_pct(n_only / total_mm_only * 100, 0)}</b>",
+            f"Cantons avec au moins un établissement formel : <b>{fmt_int(n_total - n_only)}</b>",
+            f"Communes concernées : <b>{fmt_int(only['cle_commune'].nunique())}</b> sur "
+            f"{fmt_int(reg['cle_commune'].nunique())}",
+            f"Agents Mobile Money dans ces cantons : <b>{fmt_int(agents_only)}</b> "
+            f"({fmt_pct(agents_only / agents_reg * 100 if agents_reg else 0, 0)} des agents de la région)",
+            "Canton MM-only = aucun établissement formel, seulement des agents Mobile Money",
+        ]))
+    return lines
 
 
 def _region_synth_hover(table: pd.DataFrame) -> list[str]:

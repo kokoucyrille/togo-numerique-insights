@@ -45,8 +45,11 @@ def render(ds: Datasets, f: Filters) -> None:
             if bar.empty:
                 empty_state(280)
             else:
+                hover_values, hover_lines = _hab_par_formel_hover(bar, M.accessibility_details(ds, f),
+                                                                 M.hab_par_formel_national(ds))
                 plot(ch.vertical_bars(bar, height=360, percent=False,
-                                      colors=[ch.region_color(l) for l in bar["label"]]), "ov_disp")
+                                      colors=[ch.region_color(l) for l in bar["label"]],
+                                      hover_values=hover_values, hover_extra=hover_lines), "ov_disp")
 
     year, usage_val, usage_gain = M.usage_last(ds)
     rup_year, rythme_avant, rythme_apres = M.rupture_info(ds)
@@ -109,3 +112,33 @@ def render(ds: Datasets, f: Filters) -> None:
                            unsafe_allow_html=True)
 
     source_note(C.SOURCE_NOTE)
+
+
+def _hab_par_formel_hover(bar: pd.DataFrame, details: pd.DataFrame, national: float | None) -> tuple[list[str], list[str]]:
+    """Info-bulle du graphique « Habitants par établissement formel » : en-tête (ratio de la région)
+    puis population, établissements, densité, comparaison au ratio national, représentation
+    (part des établissements ÷ part de la population) et distance médiane au point formel."""
+    heads, lines = [], []
+    for label, value in zip(bar["label"], bar["valeur"]):
+        heads.append(f"<b>{fmt_int(value)} hab.</b> par établissement formel")
+        if label not in details.index:
+            lines.append("")
+            continue
+        r = details.loc[label]
+        parts = [
+            f"Population : <b>{fmt_int(r['population'])}</b> ({fmt_pct(r['part_pop_pct'], 1)} du pays)",
+            f"Établissements formels : <b>{fmt_int(r['n_formel'])}</b> ({fmt_pct(r['part_formel_pct'], 1)} du total)",
+            f"Densité : <b>{fmt_dec(r['formel_10k'], 2)}</b> établissements pour 10 000 hab.",
+        ]
+        if national and pd.notna(value):
+            ecart = value / national
+            verdict = "moins bien" if ecart > 1 else "mieux" if ecart < 1 else "aussi bien"
+            parts.append(f"Comparé au ratio national ({fmt_int(national)}) : <b>×{fmt_dec(ecart, 2)}</b> "
+                         f"({verdict} desservie)")
+        if pd.notna(r.get("ratio_repr_formel")):
+            parts.append(f"Représentation en établissements : <b>×{fmt_dec(r['ratio_repr_formel'], 2)}</b> "
+                         "(1 = part équitable)")
+        if pd.notna(r.get("dist_med_km")):
+            parts.append(f"Distance médiane au point formel : <b>{fmt_dec(r['dist_med_km'], 1)} km</b>")
+        lines.append("<br>".join(parts))
+    return heads, lines

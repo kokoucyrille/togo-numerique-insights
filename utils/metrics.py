@@ -135,6 +135,15 @@ def accessibility_bar(ds: Datasets, f: Filters, value_col: str = "hab_par_formel
     return _lv(df, REGION_COL, value_col)
 
 
+def accessibility_details(ds: Datasets, f: Filters) -> pd.DataFrame:
+    """Table régionale (index = région) qui détaille le graphique « Habitants par établissement
+    formel » : population, établissements, densité, parts, représentation et distance médiane."""
+    df = apply_geo(ds.get("table_analytique_regions"), f)
+    if df.empty:
+        return df
+    return df.set_index(REGION_COL)
+
+
 # --------------------------------------------------------------------------- #
 # Carte territoriale interactive (components/territorial_map.py)
 # --------------------------------------------------------------------------- #

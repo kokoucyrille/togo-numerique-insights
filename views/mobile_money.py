@@ -144,9 +144,9 @@ def _fr_interval(text, flip: bool = False) -> str:
 
 
 def _gini_hover(ds: Datasets, table: pd.DataFrame) -> dict[str, list[str]]:
-    """Info-bulle de « Concentration territoriale » : pour chaque échelle et chaque réseau, indice de
-    Gini, intervalle de confiance à 95 %, nombre de territoires comparés, lecture de l'indice, écart
-    avec l'autre réseau et significativité de cet écart (tous issus de la table gini_desserte)."""
+    """Info-bulle de « Concentration territoriale », réduite à l'essentiel : nombre de territoires
+    comparés, intervalle de confiance à 95 % et écart avec l'autre réseau (avec sa significativité).
+    La lecture de l'indice (0 / 1) figure déjà dans le sous-titre de la carte."""
     raw = ds.get("gini_desserte")
     if raw.empty:
         return {}
@@ -174,11 +174,8 @@ def _gini_hover(ds: Datasets, table: pd.DataFrame) -> dict[str, list[str]]:
             parts = [
                 f"Territoires comparés : <b>{count}</b> ({echelle}s)" if count else f"Échelle : {echelle}",
                 f"Intervalle de confiance à 95 % : <b>{_fr_interval(r[ci_col])}</b>",
-                "Lecture : 0 = répartition parfaitement égale entre territoires, "
-                f"1 = tous les {label} dans un seul territoire",
-                f"Écart avec les {other} : <b>{fmt_signed(gap, 2, '')}</b> ({verdict})",
-                f"Écart {'statistiquement significatif' if significant else 'non significatif'} "
-                f"(IC95 de l'écart : {_fr_interval(r['IC95 de la différence'], flip=sign < 0)})",
+                f"Écart avec les {other} : <b>{fmt_signed(gap, 2, '')}</b> ({verdict}, "
+                f"{'statistiquement significatif' if significant else 'non significatif'})",
             ]
             lines.append("<br>".join(parts))
         out[name] = lines
